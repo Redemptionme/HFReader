@@ -26,5 +26,20 @@ public class TestDataMap : IDataMap {
         }
     }
 
+    //public void GetMap(ref Dictionary<int, TestData> dataMap) {
+    //    dataMap = m_Dic;
+    //}
+
+    //public Dictionary<int, TestData> GetMap() {
+    //    return m_Dic;
+    //}
+
+    public void clearMap() {
+        Dictionary<int, TestData> Dic = m_Dic;
+        m_Dic.Clear();
+        int t = 0;
+
+    }
+
 
 }

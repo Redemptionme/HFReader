@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using HFReader;
-
+using System.Runtime.InteropServices;
 
 public class test : MonoBehaviour {
     //public TextAsset textCsv;
@@ -18,10 +18,14 @@ public class test : MonoBehaviour {
     void Start () {
         CsvLoader loader = new CsvLoader();
         CsvTable csvTable = loader.LoadCSV("Config/test");
-        TestDataMap tMap = new TestDataMap();
+        TestDataMap tMap = new TestDataMap();        
         IDataMap tempMap = tMap as IDataMap;
         loader.LoadCSV("Config/test",ref tempMap);
         //tMap.Load(ref csvTable);
+
+        Dictionary<int, TestData> Dic = null;
+        //tMap.GetMap(ref Dic);
+        tMap.clearMap();
 
         //CsvTable csvTable = loader.LoadCSV("Config/" + str);
         foreach (CsvRecord record in csvTable.Records) {
