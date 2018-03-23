@@ -26,9 +26,9 @@ public class TestDataMap : IDataMap {
         }
     }
 
-    //public void GetMap(ref Dictionary<int, TestData> dataMap) {
-    //    dataMap = m_Dic;
-    //}
+    public void GetMap(ref Dictionary<int, TestData> dataMap) {
+        dataMap = m_Dic;
+    }
 
     //public Dictionary<int, TestData> GetMap() {
     //    return m_Dic;
