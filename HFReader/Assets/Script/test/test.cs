@@ -23,9 +23,12 @@ public class test : MonoBehaviour {
         loader.LoadCSV("Config/test",ref tempMap);
         //tMap.Load(ref csvTable);
 
-        Dictionary<int, TestData> Dic = null;
+        Dictionary<int, TestData> Dic = tMap.GetMap() as Dictionary<int, TestData>;
         //tMap.GetMap(ref Dic);
-        tMap.clearMap();
+        //tMap.clearMap();
+        foreach(var t in Dic) {
+            Debug.Log("!!!!!!!" + t.Key + "=" + t.Value.Name);
+        }
 
         //CsvTable csvTable = loader.LoadCSV("Config/" + str);
         foreach (CsvRecord record in csvTable.Records) {

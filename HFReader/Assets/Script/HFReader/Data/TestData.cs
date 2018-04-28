@@ -10,7 +10,8 @@ struct TestData{
 }
 
 public class TestDataMap : IDataMap {
-    private Dictionary<int, TestData> m_Dic = new Dictionary<int, TestData>();
+    private Dictionary<int, TestData> m_Dic = new Dictionary<int, TestData>() ;
+    
 
     public override void Load(ref CsvTable table) {
         foreach (CsvRecord record in table.Records) {
@@ -26,20 +27,12 @@ public class TestDataMap : IDataMap {
         }
     }
 
-    public void GetMap(ref Dictionary<int, TestData> dataMap) {
-        dataMap = m_Dic;
+    public object GetMap() {
+        return m_Dic;
     }
-
-    //public Dictionary<int, TestData> GetMap() {
-    //    return m_Dic;
-    //}
 
     public void clearMap() {
         Dictionary<int, TestData> Dic = m_Dic;
         m_Dic.Clear();
-        int t = 0;
-
     }
-
-
 }
